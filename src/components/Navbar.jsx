@@ -11,8 +11,8 @@ const Navbar = () => {
 	};
 	return (
 		<>
-			<header className="bg-gray-50">
-				<nav className="flex justify-around items-center w-100 mx-auto p-3">
+			<header className="bg-gray-50 w-screen">
+				<nav className="flex justify-around items-center max-w-7xl mx-auto p-3">
 					<a href="/">
 						<div className="cursor-pointer">
 							<img src="/nikita_logo.png" alt="logo" className="w-8" />
