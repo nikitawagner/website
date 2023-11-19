@@ -20,7 +20,9 @@ const Navbar = () => {
 					</a>
 					<div
 						className={`${
-							hamburgerOpen ? "top-[12%] font-black text-2xl md:text-base" : ""
+							hamburgerOpen
+								? "top-14 font-black text-2xl md:text-base h-fit"
+								: ""
 						} nav-links md:static absolute bg-gray-50
                         md:min-h-fit min-h-[25vh] left-0 top-[-100%] md:w-auto w-full flex items-start justify-center px-5`}
 					>
