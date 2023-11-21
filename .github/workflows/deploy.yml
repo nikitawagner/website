@@ -1,51 +1,49 @@
-name: Deploy
+name: Deploy website
 
 on:
-  push:
+  pull_request:
     branches:
       - main
+    types: [closed]
 
 jobs:
-  build:
-    name: Build
+  test:
+    if: github.event.pull_request.merged == true && github.base_ref == 'main'
     runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v2
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version: [12.x]
 
-      - name: Setup Node
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
-          node-version: 16
-
-      - name: Install dependencies
-        uses: bahmutov/npm-install@v1
-
-      - name: Build project
-        run: npm run build
-
-      - name: Upload production-ready build files
-        uses: actions/upload-artifact@v2
-        with:
-          name: production-files
-          path: ./dist
+          node-version: ${{ matrix.node-version }}
+      - run: npm install
+      - run: npm run test
+      - run: npm test
+        env:
+          CI: true
 
   deploy:
-    name: Deploy
-    needs: build
+    if: github.event.pull_request.merged == true && github.base_ref == 'main' # Ensures this job runs only if the PR is merged into main
+    needs: test
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
-
     steps:
-      - name: Download artifact
-        uses: actions/download-artifact@v2
+      - name: Deploy to Server
+        uses: appleboy/ssh-action@master
         with:
-          name: production-files
-          path: ./dist
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          script: |
+            cd website
+            git pull
+            npm prune
+            npm install
+            npm run build
+            pm2 reload all
