@@ -45,4 +45,3 @@ jobs:
             npm install
             npm run build
             cp -r dist/* /var/www/website
-            pm2 reload all
