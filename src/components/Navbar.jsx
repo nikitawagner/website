@@ -34,7 +34,7 @@ const Navbar = () => {
 										className="cursor-pointer text-primary-blue"
 										key={item.name}
 									>
-										<a href={item.link}>{item.name}</a>
+										<div onClick={() => navigate(item.link)}>{item.name}</div>
 									</li>
 								);
 							})}
