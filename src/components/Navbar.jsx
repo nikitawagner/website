@@ -7,6 +7,7 @@ const Navbar = () => {
 	const [hamburgerOpen, setHamburgerOpen] = useState(false);
 	const navigate = useNavigate();
 	const toggleHamburgerMenu = () => {
+		console.log(!hamburgerOpen);
 		setHamburgerOpen(!hamburgerOpen);
 	};
 	return (
@@ -20,11 +21,9 @@ const Navbar = () => {
 					</a>
 					<div
 						className={`${
-							hamburgerOpen
-								? "top-14 font-black text-2xl md:text-base h-fit"
-								: ""
+							hamburgerOpen ? "top-[56px] font-black text-2xl md:text-base" : ""
 						} nav-links md:static absolute bg-gray-50
-                        md:min-h-fit min-h-[25vh] left-0 top-[-100%] md:w-auto w-full flex items-start justify-center px-5`}
+                        md:min-h-fit min-h-[150px] left-0 top-[-100%] md:w-auto w-full flex items-start justify-center px-5`}
 					>
 						<ul className="flex gap-4 items-start flex-col md:flex-row md:items-start md:gap-[4vw] ">
 							{navItems.map((item) => {
