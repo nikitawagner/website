@@ -11,4 +11,8 @@ export const navItems = [
 		name: "Competences",
 		link: "/competences",
 	},
+	{
+		name: "CV",
+		link: "/cv",
+	},
 ];

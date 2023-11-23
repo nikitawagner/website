@@ -12,7 +12,7 @@ const Navbar = () => {
 	};
 	return (
 		<>
-			<header className="bg-gray-50 w-screen">
+			<header className="bg-gray-50 w-screen shadow-sm">
 				<nav className="flex justify-around items-center max-w-7xl mx-auto p-3">
 					<a href="/">
 						<div className="cursor-pointer">
@@ -21,7 +21,9 @@ const Navbar = () => {
 					</a>
 					<div
 						className={`${
-							hamburgerOpen ? "top-[56px] font-black text-2xl md:text-base" : ""
+							hamburgerOpen
+								? "top-[56px] font-bold text-2xl md:text-base p-5 shadow-lg"
+								: ""
 						} nav-links md:static absolute bg-gray-50
                         md:min-h-fit min-h-[150px] left-0 top-[-100%] md:w-auto w-full flex items-start justify-center px-5`}
 					>
@@ -29,7 +31,7 @@ const Navbar = () => {
 							{navItems.map((item) => {
 								return (
 									<li
-										className="font-semibold cursor-pointer text-primary-blue"
+										className="cursor-pointer text-primary-blue"
 										key={item.name}
 									>
 										<a href={item.link}>{item.name}</a>
