@@ -41,7 +41,7 @@ const Navbar = () => {
 						</ul>
 					</div>
 					<div className="flex items-center gap-5">
-						<Button text={"Kontakt"} action={() => navigate("/contact")} />
+						<Button text={"Contact"} action={() => navigate("/contact")} />
 						<div
 							name="menu"
 							className="text-3xl cursor-pointer md:hidden"

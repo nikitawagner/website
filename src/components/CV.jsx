@@ -3,7 +3,7 @@ import { cvLanguages } from "../helper/cvLanguages";
 
 const CV = () => {
 	return (
-		<div className="container">
+		<div className="container bg-white">
 			<h1 className="text-4xl font-bold text-center mb-1 mt-2">CV</h1>
 			<p className="text-center">
 				Feel free explore my CV in your prefered language!{" "}
