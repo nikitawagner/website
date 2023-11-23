@@ -1,11 +1,9 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./components/Home";
 import PageNotFound from "./components/PageNotFound";
+import CV from "./components/CV";
 
 function App() {
 	return (
@@ -14,6 +12,7 @@ function App() {
 				<Navbar />
 				<Routes>
 					<Route path="/" Component={Home} />
+					<Route path="/cv" Component={CV} />
 					<Route path="*" Component={PageNotFound} />
 				</Routes>
 			</BrowserRouter>

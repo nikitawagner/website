@@ -7,11 +7,12 @@ const Navbar = () => {
 	const [hamburgerOpen, setHamburgerOpen] = useState(false);
 	const navigate = useNavigate();
 	const toggleHamburgerMenu = () => {
+		console.log(!hamburgerOpen);
 		setHamburgerOpen(!hamburgerOpen);
 	};
 	return (
 		<>
-			<header className="bg-gray-50 w-screen">
+			<header className="bg-gray-50 w-screen shadow-sm">
 				<nav className="flex justify-around items-center max-w-7xl mx-auto p-3">
 					<a href="/">
 						<div className="cursor-pointer">
@@ -21,16 +22,16 @@ const Navbar = () => {
 					<div
 						className={`${
 							hamburgerOpen
-								? "top-14 font-black text-2xl md:text-base h-fit"
+								? "top-[56px] font-bold text-2xl md:text-base p-5 shadow-lg"
 								: ""
 						} nav-links md:static absolute bg-gray-50
-                        md:min-h-fit min-h-[25vh] left-0 top-[-100%] md:w-auto w-full flex items-start justify-center px-5`}
+                        md:min-h-fit min-h-[150px] left-0 top-[-100%] md:w-auto w-full flex items-start justify-center px-5`}
 					>
 						<ul className="flex gap-4 items-start flex-col md:flex-row md:items-start md:gap-[4vw] ">
 							{navItems.map((item) => {
 								return (
 									<li
-										className="font-semibold cursor-pointer text-primary-blue"
+										className="cursor-pointer text-primary-blue"
 										key={item.name}
 									>
 										<a href={item.link}>{item.name}</a>
@@ -40,7 +41,7 @@ const Navbar = () => {
 						</ul>
 					</div>
 					<div className="flex items-center gap-5">
-						<Button text={"Kontakt"} action={() => navigate("/contact")} />
+						<Button text={"Contact"} action={() => navigate("/contact")} />
 						<div
 							name="menu"
 							className="text-3xl cursor-pointer md:hidden"
