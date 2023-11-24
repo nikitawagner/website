@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./components/Home";
 import PageNotFound from "./components/PageNotFound";
 import CV from "./components/CV";
+import About from "./components/About";
 
 function App() {
 	return (
@@ -11,7 +12,7 @@ function App() {
 			<BrowserRouter>
 				<Navbar />
 				<Routes>
-					<Route path="/" Component={Home} />
+					<Route path="/" Component={About} />
 					<Route path="/cv" Component={CV} />
 					<Route path="*" Component={PageNotFound} />
 				</Routes>

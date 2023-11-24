@@ -4,14 +4,16 @@ import { cvLanguages } from "../helper/cvLanguages";
 const CV = () => {
 	return (
 		<div className="container bg-white">
-			<h1 className="text-4xl font-bold text-center mb-1 mt-2">CV</h1>
+			<h1 className="text-4xl font-bold text-center mb-1 mt-2 text-primary">
+				CV
+			</h1>
 			<p className="text-center">
 				Feel free to explore my CV in your prefered language!{" "}
 			</p>
 
 			<div className="flex justify-around flex-wrap gap-3 mt-5">
-				{cvLanguages.map((language) => {
-					return <CV_Box language={language} />;
+				{cvLanguages.map((language, index) => {
+					return <CV_Box language={language} key={index} />;
 				})}
 			</div>
 			<p className="font-thin text-center">
