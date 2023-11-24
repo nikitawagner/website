@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import nikita from "../assets/about/nikita.jpg";
 import { aboutImages } from "../helper/aboutImages";
+import { useNavigate } from "react-router-dom";
 
 const About = () => {
 	return (
@@ -26,6 +27,8 @@ const ShortInfo = () => {
 		return age;
 	};
 
+	const navigate = useNavigate();
+
 	const age = calculateAge("2002-02-26");
 	return (
 		<div className="container bg-white">
@@ -45,8 +48,11 @@ const ShortInfo = () => {
 							<b className="text-primary">Fullstack Applications</b> and see
 							people being happy using these solutions! Scroll down to see my
 							what I have done the last years. Or view my{" "}
-							<b>
-								<a href="/cv">CV as a PDF</a>
+							<b
+								className="text-primary hover:cursor-pointer"
+								onClick={() => navigate("/cv")}
+							>
+								CV as a PDF
 							</b>
 							.
 						</p>
