@@ -12,7 +12,7 @@ const Navbar = () => {
 	};
 	return (
 		<>
-			<header className="bg-gray-50 w-screen shadow-sm">
+			<header className="w-screen shadow-sm bg-gray-50 md:sticky md:top-0 z-50">
 				<nav className="flex justify-around items-center max-w-7xl mx-auto p-3">
 					<a href="/">
 						<div className="cursor-pointer">
