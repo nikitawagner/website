@@ -5,20 +5,22 @@ import Home from "./components/Home";
 import PageNotFound from "./components/PageNotFound";
 import CV from "./components/CV";
 import About from "./components/About";
+import Projects from "./components/Projects";
 
 function App() {
-	return (
-		<>
-			<BrowserRouter>
-				<Navbar />
-				<Routes>
-					<Route path="/" Component={About} />
-					<Route path="/cv" Component={CV} />
-					<Route path="*" Component={PageNotFound} />
-				</Routes>
-			</BrowserRouter>
-		</>
-	);
+    return (
+        <>
+            <BrowserRouter>
+                <Navbar />
+                <Routes>
+                    <Route path="/" Component={About} />
+                    <Route path="/cv" Component={CV} />
+                    <Route path="/projects" Component={Projects} />
+                    <Route path="*" Component={PageNotFound} />
+                </Routes>
+            </BrowserRouter>
+        </>
+    );
 }
 
 export default App;
