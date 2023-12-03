@@ -16,6 +16,15 @@ export default {
                 99: "0.99",
                 98: "0.98",
                 97: "0.97"
+            },
+            animation: {
+                "infinite-scroll": "infinite-scroll 100s linear infinite"
+            },
+            keyframes: {
+                "infinite-scroll": {
+                    from: { transform: "translateX(0)" },
+                    to: { transform: "translateX(-100%)" }
+                }
             }
         }
     },

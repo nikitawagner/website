@@ -57,3 +57,12 @@ a:hover {
     max-width: 1200px;
     border: 1px solid #e2e8f0;
 }
+
+.container-image-scroll {
+    margin: 20px;
+    margin-bottom: -20px;
+    padding: 10px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 1200px;
+}

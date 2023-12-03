@@ -2,11 +2,42 @@ import React, { useRef, useState } from "react";
 import nikita from "../assets/about/nikita.jpg";
 import { aboutImages } from "../helper/aboutImages";
 import { useNavigate } from "react-router-dom";
+import picture1 from "../assets/techstack/auth0.png";
+import picture2 from "../assets/techstack/css3.png";
+import picture3 from "../assets/techstack/docker.png";
+import picture4 from "../assets/techstack/edge.png";
+import picture5 from "../assets/techstack/figma.png";
+import picture6 from "../assets/techstack/github.png";
+import picture7 from "../assets/techstack/gitlab.png";
+import picture8 from "../assets/techstack/html5.png";
+import picture9 from "../assets/techstack/java.png";
+import picture10 from "../assets/techstack/js.png";
+import picture11 from "../assets/techstack/json.png";
+import picture12 from "../assets/techstack/kubernetes.png";
+import picture13 from "../assets/techstack/lightroom.png";
+import picture14 from "../assets/techstack/linux.png";
+import picture15 from "../assets/techstack/material-ui.png";
+import picture16 from "../assets/techstack/mongodb.png";
+import picture17 from "../assets/techstack/mysql.png";
+import picture18 from "../assets/techstack/nodejs.png";
+import picture19 from "../assets/techstack/npm.png";
+import picture20 from "../assets/techstack/postman.png";
+import picture21 from "../assets/techstack/prettier.png";
+import picture22 from "../assets/techstack/prisma.png";
+import picture23 from "../assets/techstack/python.png";
+import picture24 from "../assets/techstack/react-router.png";
+import picture25 from "../assets/techstack/reactjs.png";
+import picture26 from "../assets/techstack/tailwind.png";
+import picture27 from "../assets/techstack/vitejs.png";
+import picture28 from "../assets/techstack/vs.png";
+import picture29 from "../assets/techstack/wordpress.png";
 
 const About = () => {
     return (
         <>
             <ShortInfo />
+            <ImageScroller />
+
             <Timeline />
             <br></br>
             <br></br>
@@ -56,8 +87,7 @@ const ShortInfo = () => {
                             years. Or view my{" "}
                             <b
                                 className="text-primary hover:cursor-pointer"
-                                onClick={() => navigate("/cv")}
-                            >
+                                onClick={() => navigate("/cv")}>
                                 CV as a PDF
                             </b>
                             .
@@ -100,8 +130,7 @@ const ImageGrid = ({ images }) => {
                       animate-pulse items-center justify-center rounded-lg
                       bg-gray-100 object-cover ${
                           loading ? "hidden md:block" : "hidden"
-                      }`}
-                        ></div>
+                      }`}></div>
                         <div>
                             <img
                                 src={image.src}
@@ -178,7 +207,7 @@ const Timeline = () => {
                     <time className="mb-2 block font-normal leading-none text-gray-600 dark:text-gray-500">
                         2023/09 - 2024/02
                     </time>
-                    <p className="text-base font-normal text-gray-500 dark:text-gray-400">
+                    <div className="text-base font-normal text-gray-500 dark:text-gray-400">
                         Due to my interest in travelling, it was clear to me
                         that I wanted to go abroad for a semester. I have not
                         only improved my French skills but I have also grown as
@@ -210,7 +239,7 @@ const Timeline = () => {
                                 </b>
                             </li>
                         </ul>
-                    </p>
+                    </div>
                 </li>
                 <li className="mb-10 ms-6">
                     <span className="absolute -start-3 flex h-6 w-6 items-center justify-center rounded-full bg-gray-50 ring-8 ring-white dark:bg-blue-900 dark:ring-gray-900">
@@ -229,7 +258,7 @@ const Timeline = () => {
                     <time className="mb-2 block font-normal leading-none text-gray-600 dark:text-gray-500">
                         2021/09 - 2025/02
                     </time>
-                    <p className="text-base font-normal text-gray-500 dark:text-gray-400">
+                    <div className="text-base font-normal text-gray-500 dark:text-gray-400">
                         In this practical oriented university I chose the
                         specialization in Software Engineering and these are
                         some of the most interesting topics:
@@ -258,9 +287,79 @@ const Timeline = () => {
                                 <b className="text-primary">NodeJS</b>
                             </li>
                         </ul>
-                    </p>
+                    </div>
                 </li>
             </ol>
+        </div>
+    );
+};
+
+const ImageScroller = () => {
+    const images = [
+        picture1,
+        picture2,
+        picture3,
+        picture4,
+        picture5,
+        picture6,
+        picture7,
+        picture8,
+        picture9,
+        picture10,
+        picture11,
+        picture12,
+        picture13,
+        picture14,
+        picture15,
+        picture16,
+        picture17,
+        picture18,
+        picture19,
+        picture20,
+        picture21,
+        picture22,
+        picture23,
+        picture24,
+        picture25,
+        picture26,
+        picture27,
+        picture28,
+        picture29
+    ];
+
+    return (
+        <div className="container-image-scroll">
+            <div
+                className="inline-flex w-full flex-nowrap overflow-hidden 
+            [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]
+            md:[mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]">
+                <ul className="animate-infinite-scroll flex items-center justify-center md:justify-start [&_img]:max-w-none [&_li]:mx-1 md:[&_li]:mx-5">
+                    {images.map((image, index) => {
+                        return (
+                            <li key={index}>
+                                <img
+                                    src={image}
+                                    alt="Image"
+                                    className="h-14 hover:scale-110 hover:cursor-pointer"
+                                />
+                            </li>
+                        );
+                    })}
+                </ul>
+                <ul className="animate-infinite-scroll flex items-center justify-center md:justify-start [&_img]:max-w-none [&_li]:mx-1 md:[&_li]:mx-5">
+                    {images.map((image, index) => {
+                        return (
+                            <li key={index}>
+                                <img
+                                    src={image}
+                                    alt="Image"
+                                    className="h-14 hover:scale-110 hover:cursor-pointer"
+                                />
+                            </li>
+                        );
+                    })}
+                </ul>
+            </div>
         </div>
     );
 };

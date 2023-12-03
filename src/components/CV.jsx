@@ -25,7 +25,9 @@ const CV = () => {
 
 const CV_Box = ({ language }) => {
     return (
-        <div className="flex flex-col items-center justify-center rounded-md bg-gray-50 p-5 hover:bg-gray-100">
+        <div
+            className="animation flex flex-col items-center justify-center rounded-md bg-gray-50 
+        p-5 duration-150 hover:scale-101 hover:shadow-[5px_5px_0px_0px_rgba(100,108,255)]">
             <img
                 src={language.flag}
                 alt={language.language}
@@ -37,8 +39,7 @@ const CV_Box = ({ language }) => {
                 </a>
                 <a
                     href={language.file}
-                    download={`WAGNER_Nikita_CV_${language.language}`}
-                >
+                    download={`WAGNER_Nikita_CV_${language.language}`}>
                     <Button text={"download"} />
                 </a>
             </div>

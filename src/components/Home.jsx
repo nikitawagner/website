@@ -17,8 +17,7 @@ const PortfolioGrid = () => {
             <div
                 className="aspect-w-1 aspect-h-1 col-span-1 h-40
 				rounded-lg bg-primary transition-all duration-300 hover:scale-97 hover:cursor-not-allowed
-				md:col-span-1"
-            >
+				md:col-span-1">
                 <img
                     src={nikita}
                     className="h-full w-full rounded-lg object-cover"
@@ -30,8 +29,7 @@ const PortfolioGrid = () => {
 				font-bold text-white transition-all duration-300 hover:scale-101
 				hover:cursor-pointer hover:shadow-[5px_5px_0px_0px_rgba(100,108,255)]
 				sm:text-6xl md:col-span-2 md:text-7xl"
-                onClick={() => navigate("/about")}
-            >
+                onClick={() => navigate("/about")}>
                 <div className="shrink">NIKITA WAGNER</div>
             </div>
             <div
@@ -40,8 +38,7 @@ const PortfolioGrid = () => {
 				text-white transition-all duration-300 hover:scale-101
 				hover:cursor-pointer hover:shadow-[5px_5px_0px_0px_rgba(144,149,252)]
 				sm:text-5xl md:col-span-3 md:text-7xl"
-                onClick={() => navigate("/projects")}
-            >
+                onClick={() => navigate("/projects")}>
                 <div className="shrink">FULLSTACK DEVELOPEMENT</div>
             </div>
             <div
@@ -50,15 +47,13 @@ const PortfolioGrid = () => {
 				font-bold text-white transition-all duration-300 hover:scale-101
 				hover:cursor-pointer hover:shadow-[5px_5px_0px_0px_rgba(100,108,255)]
 				sm:text-6xl md:col-span-1 md:text-8xl"
-                onClick={() => navigate("/cv")}
-            >
+                onClick={() => navigate("/cv")}>
                 <div className="shrink">CV</div>
             </div>
             <div
                 className="aspect-w-1 aspect-h-1 col-span-1 h-40
 				rounded-lg bg-primary transition-all duration-300 hover:scale-97 hover:cursor-not-allowed
-				md:col-span-2"
-            >
+				md:col-span-2">
                 <img
                     src={madrid}
                     className="h-full w-full rounded-lg object-cover"
