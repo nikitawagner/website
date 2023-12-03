@@ -14,7 +14,7 @@ export const projectList = [
             "MySQL",
             "Electron"
         ],
-        imageMain: "tib-main.png"
+        imageMain: "tib.png"
     },
     {
         id: 2,
@@ -24,6 +24,30 @@ export const projectList = [
         descriptionLong: `TIB is a web application that enhances the communication between teams and their team leaders.
             TIB is a web application that enhances the communication between teams and their team leaders.`,
         technologies: ["Wordpress", "React", "TailwindCSS"],
-        imageMain: "ki4all-main.png"
+        imageMain: "./projects/ki4all.png"
+    },
+    {
+        id: 3,
+        name: "Webpizza",
+        descriptionShort:
+            "University project: Creating a web application that allows users to order pizza.",
+        descriptionLong: `TIB is a web application that enhances the communication between teams and their team leaders.
+            TIB is a web application that enhances the communication between teams and their team leaders.`,
+        technologies: ["Python", "Django", "SQLite", "Bootstrap"],
+        imageMain: "./projects/ki4all.png"
+    },
+    {
+        id: 99,
+        name: "nikitawager.de",
+        descriptionShort: "Creating and maintaining personal website",
+        descriptionLong: `TIB is a web application that enhances the communication between teams and their team leaders.
+            TIB is a web application that enhances the communication between teams and their team leaders.`,
+        technologies: [
+            "React",
+            "TailwindCSS",
+            "Github Actions",
+            "Ubunutu Server"
+        ],
+        imageMain: "./projects/ki4all.png"
     }
 ];

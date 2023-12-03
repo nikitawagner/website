@@ -6,8 +6,11 @@ import { useNavigate } from "react-router";
 const Navbar = () => {
     const [hamburgerOpen, setHamburgerOpen] = useState(false);
     const navigate = useNavigate();
+    const navigateTo = (link) => {
+        toggleHamburgerMenu();
+        navigate(link);
+    };
     const toggleHamburgerMenu = () => {
-        console.log(!hamburgerOpen);
         setHamburgerOpen(!hamburgerOpen);
     };
     return (
@@ -29,18 +32,23 @@ const Navbar = () => {
                                 ? "top-[56px] p-5 text-2xl font-bold shadow-lg md:text-base"
                                 : ""
                         } nav-links absolute left-0 top-[-100%]
-                        flex min-h-[150px] w-full items-start justify-center bg-gray-50 px-5 md:static md:min-h-fit md:w-auto`}
-                    >
+                        flex min-h-[150px] w-full items-start justify-center bg-gray-50 px-5 md:static md:min-h-fit md:w-auto`}>
                         <ul className="flex flex-col items-start gap-4 md:flex-row md:items-start md:gap-[4vw] ">
                             {navItems.map((item) => {
                                 return (
                                     <li
                                         className="text-primary-blue cursor-pointer"
-                                        key={item.name}
-                                    >
+                                        key={item.name}>
                                         <div
-                                            onClick={() => navigate(item.link)}
-                                        >
+                                            className="md:hidden"
+                                            onClick={() =>
+                                                navigateTo(item.link)
+                                            }>
+                                            {item.name}
+                                        </div>
+                                        <div
+                                            className="hidden md:block"
+                                            onClick={() => navigate(item.link)}>
                                             {item.name}
                                         </div>
                                     </li>
@@ -56,8 +64,7 @@ const Navbar = () => {
                         <div
                             name="menu"
                             className="cursor-pointer text-3xl md:hidden"
-                            onClick={toggleHamburgerMenu}
-                        >
+                            onClick={toggleHamburgerMenu}>
                             {hamburgerOpen ? (
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -65,8 +72,7 @@ const Navbar = () => {
                                     viewBox="0 0 24 24"
                                     strokeWidth="2.5"
                                     stroke="currentColor"
-                                    className="h-6 w-6"
-                                >
+                                    className="h-6 w-6">
                                     <path
                                         strokeLinecap="round"
                                         strokeLinejoin="round"
@@ -80,8 +86,7 @@ const Navbar = () => {
                                     viewBox="0 0 24 24"
                                     strokeWidth="2.5"
                                     stroke="currentColor"
-                                    className="h-6 w-6"
-                                >
+                                    className="h-6 w-6">
                                     <path
                                         strokeLinecap="round"
                                         strokeLinejoin="round"

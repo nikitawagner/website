@@ -16,7 +16,7 @@ const CV = () => {
                     return <CV_Box language={language} key={index} />;
                 })}
             </div>
-            <p className="text-center font-thin">
+            <p className="mt-2 text-center font-thin">
                 {"("}last updated 2023-11-23{")"}
             </p>
         </div>

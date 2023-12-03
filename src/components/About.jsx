@@ -126,9 +126,9 @@ const ImageGrid = ({ images }) => {
                 <React.Fragment key={index}>
                     <div className="w-auto flex-none md:w-auto">
                         <div
-                            className={`flex h-20 w-20 
-                      animate-pulse items-center justify-center rounded-lg
-                      bg-gray-100 object-cover ${
+                            className={`flex h-20 w-20 animate-pulse
+                      items-center justify-center rounded-lg bg-gray-100
+                      object-cover lg:h-32 ${
                           loading ? "hidden md:block" : "hidden"
                       }`}></div>
                         <div>
@@ -151,9 +151,9 @@ const ImageGrid = ({ images }) => {
 const Timeline = () => {
     return (
         <div className="container bg-white">
-            <ol className="relative border-s border-gray-200 pr-2 dark:border-gray-700">
+            <ol className="relative m-3 border-s border-gray-200 pr-2 dark:border-gray-700">
                 <li className="mb-10 ms-6">
-                    <span className="absolute -start-3 flex h-6 w-6 items-center justify-center rounded-full bg-gray-50 ring-8 ring-white dark:bg-blue-900 dark:ring-gray-900">
+                    <span className="absolute -start-3 flex h-6 w-6 items-center justify-center rounded-full bg-white ring-8 ring-white dark:bg-blue-900 dark:ring-gray-900">
                         <img src="./about/vw.png" className="h-6 w-6" />
                     </span>
                     <h3 className="mb-1 text-lg font-semibold text-gray-900 dark:text-white">
@@ -194,7 +194,7 @@ const Timeline = () => {
                     </ul>
                 </li>
                 <li className="mb-10 ms-6">
-                    <span className="absolute -start-3 flex h-6 w-6 items-center justify-center rounded-full bg-gray-50 ring-8 ring-white dark:bg-blue-900 dark:ring-gray-900">
+                    <span className="absolute -start-3 flex h-6 w-6 items-center justify-center rounded-full bg-white ring-8 ring-white dark:bg-blue-900 dark:ring-gray-900">
                         <img src="./about/iut.png" className="h-3.5 w-3.5" />
                     </span>
                     <h3 className="mb-1 text-lg font-semibold text-gray-900 dark:text-white">
@@ -242,7 +242,7 @@ const Timeline = () => {
                     </div>
                 </li>
                 <li className="mb-10 ms-6">
-                    <span className="absolute -start-3 flex h-6 w-6 items-center justify-center rounded-full bg-gray-50 ring-8 ring-white dark:bg-blue-900 dark:ring-gray-900">
+                    <span className="absolute -start-3 flex h-6 w-6 items-center justify-center rounded-full bg-white ring-8 ring-white dark:bg-blue-900 dark:ring-gray-900">
                         <img
                             src="./about/ostfalia.png"
                             className="h-3.5 w-3.5"

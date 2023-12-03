@@ -18,7 +18,8 @@ export default {
                 97: "0.97"
             },
             animation: {
-                "infinite-scroll": "infinite-scroll 100s linear infinite"
+                "infinite-scroll": "infinite-scroll 100s linear infinite",
+                "infinite-scroll-fast": "infinite-scroll 50s linear infinite"
             },
             keyframes: {
                 "infinite-scroll": {
