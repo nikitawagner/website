@@ -14,7 +14,8 @@ export const projectList = [
             "MySQL",
             "Electron"
         ],
-        imageMain: "tib.png"
+        imageMain: "tib.png",
+        logo: "/projects/tib_logo.png"
     },
     {
         id: 2,
@@ -24,7 +25,8 @@ export const projectList = [
         descriptionLong: `TIB is a web application that enhances the communication between teams and their team leaders.
             TIB is a web application that enhances the communication between teams and their team leaders.`,
         technologies: ["Wordpress", "React", "TailwindCSS"],
-        imageMain: "./projects/ki4all.png"
+        imageMain: "./projects/ki4all.png",
+        logo: "/projects/ki4all_logo.png"
     },
     {
         id: 3,
@@ -34,7 +36,20 @@ export const projectList = [
         descriptionLong: `TIB is a web application that enhances the communication between teams and their team leaders.
             TIB is a web application that enhances the communication between teams and their team leaders.`,
         technologies: ["Python", "Django", "SQLite", "Bootstrap"],
-        imageMain: "./projects/ki4all.png"
+        imageMain: "./projects/ki4all.png",
+        logo: "/projects/webpizza_logo.png"
+    },
+    {
+        id: 4,
+        name: "Flower AI Model",
+        descriptionShort:
+            "Page where you can upload an image and the Models tells you what type of flower it is.",
+        descriptionLong: `TIB is a web application that enhances the communication between teams and their team leaders.
+            TIB is a web application that enhances the communication between teams and their team leaders.`,
+        technologies: ["Python", "JavaScript", "React"],
+        imageMain: "./projects/ki4all.png",
+        logo: "/projects/webpizza_logo.png",
+        link: "flower-ai"
     },
     {
         id: 99,
@@ -48,6 +63,7 @@ export const projectList = [
             "Github Actions",
             "Ubunutu Server"
         ],
-        imageMain: "./projects/ki4all.png"
+        imageMain: "./projects/ki4all.png",
+        logo: "/projects/website_logo.png"
     }
 ];

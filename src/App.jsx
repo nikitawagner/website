@@ -6,6 +6,8 @@ import PageNotFound from "./components/PageNotFound";
 import CV from "./components/CV";
 import About from "./components/About";
 import Projects from "./components/Projects";
+import Project from "./components/Project";
+import AI from "./components/projects/ai/AI";
 
 function App() {
     return (
@@ -16,6 +18,8 @@ function App() {
                     <Route path="/" Component={About} />
                     <Route path="/cv" Component={CV} />
                     <Route path="/projects" Component={Projects} />
+                    <Route path="/projects/:id" Component={Project} />
+                    <Route path="/projects/flower-ai" Component={AI} />
                     <Route path="*" Component={PageNotFound} />
                 </Routes>
             </BrowserRouter>

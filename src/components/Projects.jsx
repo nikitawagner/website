@@ -30,7 +30,7 @@ const Projects = () => {
                             <div
                                 className="text-l mt-3 font-bold text-secondary hover:cursor-pointer"
                                 onClick={() =>
-                                    navigate(`/projects/${project.id}`)
+                                    navigate(`/projects/${project.link}`)
                                 }>
                                 Learn more {">"}
                             </div>

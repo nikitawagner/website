@@ -328,7 +328,7 @@ const ImageScroller = () => {
     ];
 
     return (
-        <div className="container-image-scroll">
+        <div className="container-no-border">
             <div
                 className="inline-flex w-full flex-nowrap overflow-hidden 
             [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]
