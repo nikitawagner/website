@@ -4,6 +4,7 @@ import { ComposableMap, Geographies, Geography } from "react-simple-maps";
 import { Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import LoadingSpinner from "../../LoadingSpinner";
+import axios from "axios";
 
 const filterOptions = ["Population", "Humand Developement Index"];
 const yearOptions = [
@@ -34,15 +35,45 @@ const yearOptions = [
 
 const SemanticWeb = () => {
     const [requestIsLoading, setRequestIsLoading] = useState(false);
+    const [requestResult, setRequestResult] = useState("");
     const [requestOptions, setRequestOptions] = useState(0);
     const [requestYear, setRequestYear] = useState(yearOptions.length - 1);
     const [countryData, setCountryData] = useState({});
-    const makeSparqlRequest = () => {
-        // make a 5 sec delay to show the loading animation
+    const makeSparqlRequest = async () => {
         setRequestIsLoading(true);
-        setTimeout(() => {
-            setRequestIsLoading(false);
-        }, 5000);
+        let result;
+        try {
+            result = await axios.post("http://localhost:8080/api", {
+                year: yearOptions[requestYear]
+            });
+            // TODO: change structure of result data in backend
+            setCountryData(result.data);
+        } catch (error) {
+            if (error.response) {
+                const statusCode = error.response.status;
+                if (statusCode === 400) {
+                    setRequestResult("ERROR 400: Bad Request");
+                } else if (statusCode === 500) {
+                    setRequestResult(
+                        `ERROR 500: Something is wrong with the server. Contact the admin.`
+                    );
+                } else {
+                    setRequestResult(
+                        `Error ${statusCode}: Other error occurred`
+                    );
+                }
+            } else if (error.request) {
+                setRequestResult(
+                    "ERROR: Something is wrong with the Server. Contact the admin."
+                );
+            } else {
+                setRequestResult(
+                    "ERROR: Setting up the request failed. Contact the admin."
+                );
+            }
+        }
+        console.log(result);
+        setRequestIsLoading(false);
     };
     return (
         <div className="container flex justify-center bg-white">
