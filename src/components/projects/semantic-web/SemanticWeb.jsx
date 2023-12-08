@@ -6,7 +6,7 @@ import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import LoadingSpinner from "../../LoadingSpinner";
 import axios from "axios";
 
-const filterOptions = ["Population", "Humand Developement Index"];
+const filterOptions = ["Accident Rate", "Adjusted Accident Rate (HDI) "];
 const yearOptions = [
     "1999",
     "2000",
@@ -46,13 +46,14 @@ const SemanticWeb = () => {
             result = await axios.post("http://localhost:8080/api", {
                 year: yearOptions[requestYear]
             });
-            // TODO: change structure of result data in backend
-            setCountryData(result.data);
+            setRequestResult("Fetched Data Successfully!");
+            setCountryData(result.data.data);
         } catch (error) {
             if (error.response) {
                 const statusCode = error.response.status;
                 if (statusCode === 400) {
                     setRequestResult("ERROR 400: Bad Request");
+                    console.log(error);
                 } else if (statusCode === 500) {
                     setRequestResult(
                         `ERROR 500: Something is wrong with the server. Contact the admin.`
@@ -66,18 +67,16 @@ const SemanticWeb = () => {
                 setRequestResult(
                     "ERROR: Something is wrong with the Server. Contact the admin."
                 );
-            } else {
-                setRequestResult(
-                    "ERROR: Setting up the request failed. Contact the admin."
-                );
             }
         }
-        console.log(result);
+        console.log(requestResult);
+        console.log(countryData);
         setRequestIsLoading(false);
     };
     return (
         <div className="container flex justify-center bg-white">
             <div className="container-map w-full md:w-2/4">
+                {countryData.poland.year}
                 <div className="flex flex-wrap justify-end gap-2">
                     <YearDropdown
                         title="Option"
@@ -115,18 +114,17 @@ const SemanticWeb = () => {
                             geographies.map((geo) => {
                                 const countryName =
                                     geo.properties.name.toLowerCase();
-                                // console.log(
-                                //     countryData[countryName]
-                                //         ? countryData[countryName].value
-                                //         : "No Content :("
-                                // );
                                 return (
                                     <Geography
                                         key={`${geo.rsmKey}-${geo.id}`}
                                         geography={geo}
                                         fill={
                                             countryData[countryName]
-                                                ? countryData[countryName].color
+                                                ? requestOptions === 0
+                                                    ? countryData[countryName]
+                                                          .colorAccidentRatePer100k
+                                                    : countryData[countryName]
+                                                          .colorAdjustedAccidentRate
                                                 : "#EAEAEC"
                                         }
                                         stroke="#000"
