@@ -1,47 +1,47 @@
 name: Deploy website
 
 on:
-  pull_request:
-    branches:
-      - main
-    types: [closed]
+    pull_request:
+        branches:
+            - main
+        types: [closed]
 
 jobs:
-  test:
-    if: github.event.pull_request.merged == true && github.base_ref == 'main'
-    runs-on: ubuntu-latest
+    test:
+        if: github.event.pull_request.merged == true && github.base_ref == 'main'
+        runs-on: ubuntu-latest
 
-    strategy:
-      fail-fast: false
-      matrix:
-        node-version: [20.x]
+        strategy:
+            fail-fast: false
+            matrix:
+                node-version: [20.x]
 
-    steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-      - run: npm install
-        env:
-          CI: true
+        steps:
+            - uses: actions/checkout@v2
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+            - run: npm install
+              env:
+                  CI: true
 
-  deploy:
-    if: github.event.pull_request.merged == true && github.base_ref == 'main' # Ensures this job runs only if the PR is merged into main
-    needs: test
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy to Server
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          password: ${{ secrets.PASSWORD }}
-          port: ${{ secrets.PORT }}
-          script: |
-            cd website
-            git pull
-            npm prune
-            npm install
-            npm run build
-            cp -r dist/* /var/www/website
+    deploy:
+        if: github.event.pull_request.merged == true && github.base_ref == 'main' # Ensures this job runs only if the PR is merged into main
+        needs: test
+        runs-on: ubuntu-latest
+        steps:
+            - name: Deploy to Server
+              uses: appleboy/ssh-action@master
+              with:
+                  host: ${{ secrets.HOST }}
+                  username: ${{ secrets.USERNAME }}
+                  password: ${{ secrets.PASSWORD }}
+                  port: ${{ secrets.PORT }}
+                  script: |
+                      cd website
+                      git pull
+                      npm prune
+                      npm install
+                      npm run build
+                      cp -r dist/* /var/www/website
