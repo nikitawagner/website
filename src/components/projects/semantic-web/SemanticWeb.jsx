@@ -69,14 +69,11 @@ const SemanticWeb = () => {
                 );
             }
         }
-        console.log(requestResult);
-        console.log(countryData);
         setRequestIsLoading(false);
     };
     return (
         <div className="container flex justify-center bg-white">
             <div className="container-map w-full md:w-2/4">
-                {countryData.poland.year}
                 <div className="flex flex-wrap justify-end gap-2">
                     <YearDropdown
                         title="Option"
