@@ -8,6 +8,7 @@ import About from "./components/About";
 import Projects from "./components/Projects";
 import Project from "./components/Project";
 import AI from "./components/projects/ai/AI";
+import SemanticWeb from "./components/projects/semantic-web/SemanticWeb";
 
 function App() {
     return (
@@ -18,8 +19,12 @@ function App() {
                     <Route path="/" Component={About} />
                     <Route path="/cv" Component={CV} />
                     <Route path="/projects" Component={Projects} />
-                    <Route path="/projects/:id" Component={Project} />
+                    {/* <Route path="/projects/:id" Component={Project} /> */}
                     <Route path="/projects/flower-ai" Component={AI} />
+                    <Route
+                        path="/projects/semantic-web"
+                        Component={SemanticWeb}
+                    />
                     <Route path="*" Component={PageNotFound} />
                 </Routes>
             </BrowserRouter>

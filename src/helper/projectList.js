@@ -51,6 +51,19 @@ export const projectList = [
         logo: "/projects/webpizza_logo.png",
         link: "flower-ai"
     },
+    ,
+    {
+        id: 5,
+        name: "Semantic Web",
+        descriptionShort:
+            "Visualization of a SPARQL query result which connects to Wikidata and a custom database.",
+        descriptionLong: `TIB is a web application that enhances the communication between teams and their team leaders.
+            TIB is a web application that enhances the communication between teams and their team leaders.`,
+        technologies: ["JavaScript", "SPARQL", "SHACL"],
+        imageMain: "./projects/ki4all.png",
+        logo: "/projects/webpizza_logo.png",
+        link: "semantic-web"
+    },
     {
         id: 99,
         name: "nikitawager.de",

@@ -151,25 +151,25 @@ const ImageGrid = ({ images }) => {
 const Timeline = () => {
     return (
         <div className="container bg-white">
-            <ol className="relative m-3 border-s border-gray-200 pr-2 dark:border-gray-700">
+            <ol className="relative m-3 border-s border-gray-200 pr-2">
                 <li className="mb-10 ms-6">
-                    <span className="absolute -start-3 flex h-6 w-6 items-center justify-center rounded-full bg-white ring-8 ring-white dark:bg-blue-900 dark:ring-gray-900">
+                    <span className="absolute -start-3 flex h-6 w-6 items-center justify-center rounded-full bg-white ring-8 ring-white ">
                         <img src="./about/vw.png" className="h-6 w-6" />
                     </span>
-                    <h3 className="mb-1 text-lg font-semibold text-gray-900 dark:text-white">
+                    <h3 className="mb-1 text-lg font-semibold text-gray-900">
                         Dual Study Program at{" "}
                         <span className="text-primary">
                             &nbsp;VOLKSWAGEN&nbsp;
                         </span>{" "}
                         (Hannover)
-                        <span className="me-2 ms-3 rounded bg-primary px-2.5 py-0.5 text-sm font-medium text-white dark:bg-blue-900 dark:text-blue-300">
+                        <span className="me-2 ms-3 rounded bg-primary px-2.5 py-0.5 text-sm font-medium text-white ">
                             Latest
                         </span>
                     </h3>
-                    <time className="mb-2 mb-4 block font-normal leading-none text-gray-600 dark:text-gray-500">
+                    <time className="mb-2 mb-4 block font-normal leading-none text-gray-600 ">
                         2021/09 - 2025/02
                     </time>
-                    <p className="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
+                    <p className="mb-4 text-base font-normal text-gray-500 ">
                         Web Application{" "}
                         {/* with over <b className="text-primary">1000</b> daily users  */}
                         that incubates the communication between teams and team
@@ -194,20 +194,20 @@ const Timeline = () => {
                     </ul>
                 </li>
                 <li className="mb-10 ms-6">
-                    <span className="absolute -start-3 flex h-6 w-6 items-center justify-center rounded-full bg-white ring-8 ring-white dark:bg-blue-900 dark:ring-gray-900">
+                    <span className="absolute -start-3 flex h-6 w-6 items-center justify-center rounded-full bg-white ring-8 ring-white">
                         <img src="./about/iut.png" className="h-3.5 w-3.5" />
                     </span>
-                    <h3 className="mb-1 text-lg font-semibold text-gray-900 dark:text-white">
+                    <h3 className="mb-1 text-lg font-semibold text-gray-900">
                         ERASMUS Computer Science at{" "}
                         <span className="text-primary">
                             &nbsp;IUT D'ORSAY&nbsp;
                         </span>{" "}
                         (Paris)
                     </h3>
-                    <time className="mb-2 block font-normal leading-none text-gray-600 dark:text-gray-500">
+                    <time className="mb-2 block font-normal leading-none text-gray-600">
                         2023/09 - 2024/02
                     </time>
-                    <div className="text-base font-normal text-gray-500 dark:text-gray-400">
+                    <div className="text-base font-normal text-gray-500">
                         Due to my interest in travelling, it was clear to me
                         that I wanted to go abroad for a semester. I have not
                         only improved my French skills but I have also grown as
@@ -242,23 +242,23 @@ const Timeline = () => {
                     </div>
                 </li>
                 <li className="mb-10 ms-6">
-                    <span className="absolute -start-3 flex h-6 w-6 items-center justify-center rounded-full bg-white ring-8 ring-white dark:bg-blue-900 dark:ring-gray-900">
+                    <span className="absolute -start-3 flex h-6 w-6 items-center justify-center rounded-full bg-white ring-8 ring-white">
                         <img
                             src="./about/ostfalia.png"
                             className="h-3.5 w-3.5"
                         />
                     </span>
-                    <h3 className="mb-1 text-lg font-semibold text-gray-900 dark:text-white">
+                    <h3 className="mb-1 text-lg font-semibold text-gray-900">
                         BSc Computer Science at{" "}
                         <span className="text-primary">
                             &nbsp;OSTFALIA&nbsp;
                         </span>{" "}
                         (Wolfenbüttel)
                     </h3>
-                    <time className="mb-2 block font-normal leading-none text-gray-600 dark:text-gray-500">
+                    <time className="mb-2 block font-normal leading-none text-gray-600">
                         2021/09 - 2025/02
                     </time>
-                    <div className="text-base font-normal text-gray-500 dark:text-gray-400">
+                    <div className="text-base font-normal text-gray-500">
                         In this practical oriented university I chose the
                         specialization in Software Engineering and these are
                         some of the most interesting topics:
@@ -333,7 +333,7 @@ const ImageScroller = () => {
                 className="inline-flex w-full flex-nowrap overflow-hidden 
             [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]
             md:[mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]">
-                <ul className="animate-infinite-scroll flex items-center justify-center md:justify-start [&_img]:max-w-none [&_li]:mx-1 md:[&_li]:mx-5">
+                <ul className="flex animate-infinite-scroll items-center justify-center md:justify-start [&_img]:max-w-none [&_li]:mx-1 md:[&_li]:mx-5">
                     {images.map((image, index) => {
                         return (
                             <li key={index}>
@@ -346,7 +346,7 @@ const ImageScroller = () => {
                         );
                     })}
                 </ul>
-                <ul className="animate-infinite-scroll flex items-center justify-center md:justify-start [&_img]:max-w-none [&_li]:mx-1 md:[&_li]:mx-5">
+                <ul className="flex animate-infinite-scroll items-center justify-center md:justify-start [&_img]:max-w-none [&_li]:mx-1 md:[&_li]:mx-5">
                     {images.map((image, index) => {
                         return (
                             <li key={index}>
