@@ -13,26 +13,37 @@ export const predictImage = async (image) => {
 
     const tensor = tf.browser
         .fromPixels(image)
-        .resizeNearestNeighbor([128, 128])
+        .resizeNearestNeighbor([128, 128]) // Resize the image to 128x128
         .toFloat()
         .div(tf.scalar(255.0))
         .expandDims();
 
-    const predictions = await model.predict(tensor).data();
+    let predictions = await model.predict(tensor).data();
     let topPrediction = Array.from(predictions);
 
-    topPrediction = topPrediction.map((p) => Math.max(p, 0));
-    const sum = topPrediction.reduce((a, b) => a + b, 0);
-    topPrediction = topPrediction.map((p) => p / sum);
+    // La somme les probabilités des 14 premières classes
+    let probAutre = topPrediction
+        .filter((p, i) => i != 6 && i != 13)
+        .reduce((a, b) => a + b, 0);
+    let labelAutre = "something else";
 
-    const PredictedProb = Math.max(...topPrediction);
-    const PredictedLabel = ["Autre", "Chou-Fleur", "Tournesols"][
-        topPrediction.indexOf(PredictedProb)
-    ];
+    let probChouFleur = topPrediction[6];
+    let labelChouFleur = "a Cauliflower";
+
+    let probTournesol = topPrediction[13];
+    let labelTournesol = "a Sunflower";
+
+    let probMax = Math.max(probAutre, probChouFleur, probTournesol);
+    let labelMax =
+        probMax == probAutre
+            ? labelAutre
+            : probMax == probChouFleur
+              ? labelChouFleur
+              : labelTournesol;
 
     return {
-        name: PredictedLabel,
-        percentage: Math.floor(PredictedProb * 100) / 100
+        name: labelMax,
+        percentage: Math.floor(probMax * 100) / 100
     };
 };
 

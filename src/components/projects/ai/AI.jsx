@@ -51,7 +51,7 @@ const AI = () => {
 
             {result && selectedImage && (
                 <div className="flex flex-col items-center justify-center">
-                    <div>It's a {result.name}!</div>
+                    <div>It's {result.name}!</div>
                     <div
                         className="w-full rounded-full bg-gray-200 dark:bg-gray-700"
                         style={{ width: "250px" }}>
