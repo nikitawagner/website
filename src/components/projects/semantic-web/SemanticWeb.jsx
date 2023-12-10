@@ -48,7 +48,7 @@ const SemanticWeb = () => {
         setRequestIsLoading(true);
         let result;
         try {
-            result = await axios.post("http://localhost:8080/api", {
+            result = await axios.post("http://195.90.212.134:8080/api", {
                 year: yearOptions[requestYear]
             });
             setRequestResult("Fetched Data Successfully!");
@@ -77,7 +77,12 @@ const SemanticWeb = () => {
         setRequestIsLoading(false);
     };
     return (
-        <div className="container flex justify-center bg-white">
+        <div className="container flex flex-col items-center justify-center bg-white">
+            <h1 className="m-3 text-center text-primary md:text-2xl md:font-bold">
+                How does the number of people killed in car accidents vary
+                depending on the human developement index and the population of
+                countries over the years in Europe?
+            </h1>
             <div className="container-map w-full md:w-2/4">
                 <div className="flex flex-wrap items-center justify-end gap-2">
                     <SimpleTooltip
