@@ -9,7 +9,11 @@ import { objectIsEmpty } from "../../../helper/objectIsEmpty";
 import { FaRegQuestionCircle } from "react-icons/fa";
 import SimpleTooltip from "../../SimpleTooltip";
 
-const filterOptions = ["Accident Rate", "Adjusted Accident Rate (HDI) "];
+const filterOptions = [
+    "Accident Rate",
+    "Adjusted Accident Rate (HDI)",
+    "Human Developement Index"
+];
 const yearOptions = [
     "1999",
     "2000",
@@ -89,7 +93,9 @@ const SemanticWeb = () => {
                         text={
                             requestOptions === 0
                                 ? "How many road accidents happen per 100.000 people ((Accidents / Population) * 100.000)"
-                                : "How many road accidents happen per 100.000 people adjusted by the Human Development Index (((Accidents / Population) * 100.000) / HDI)"
+                                : requestOptions === 1
+                                  ? "How many road accidents happen per 100.000 people adjusted by the Human Development Index (((Accidents / Population) * 100.000) / HDI)"
+                                  : ""
                         }>
                         <FaRegQuestionCircle className="text-gray-500 hover:text-gray-700" />
                     </SimpleTooltip>
@@ -142,10 +148,14 @@ const SemanticWeb = () => {
                                                               countryName
                                                           ]
                                                               .colorAccidentRatePer100k
-                                                        : countryData[
-                                                              countryName
-                                                          ]
-                                                              .colorAdjustedAccidentRate
+                                                        : requestOptions === 1
+                                                          ? countryData[
+                                                                countryName
+                                                            ]
+                                                                .colorAdjustedAccidentRate
+                                                          : countryData[
+                                                                countryName
+                                                            ].hdiColor
                                                     : "#EAEAEC"
                                             }
                                             stroke="#000"
@@ -193,16 +203,20 @@ const SemanticWeb = () => {
                                               ?.accidentRatePer100k * 100
                                       ) / 100
                                   } accidents per 100k`
-                                : `Adjusted Accident Rate ${
-                                      Math.floor(
-                                          countryData[currentHoveredCountry]
-                                              ?.adjustedAccidentRate * 100
-                                      ) / 100
-                                  }`
+                                : requestOptions === 1
+                                  ? `Adjusted Accident Rate ${
+                                        Math.floor(
+                                            countryData[currentHoveredCountry]
+                                                ?.adjustedAccidentRate * 100
+                                        ) / 100
+                                    }`
+                                  : `${countryData[currentHoveredCountry]?.hdi}`
                             : `Hover to see ${
                                   requestOptions === 0
                                       ? "Accident Rate"
-                                      : "Adjusted Accident Rate (HDI)"
+                                      : requestOptions === 1
+                                        ? "Adjusted Accident Rate (HDI)"
+                                        : "Human Developement Index"
                               }`
                         : "Press go to fetch data"
                 }`}</div>
@@ -340,7 +354,7 @@ export const Legend = ({ countryData, option }) => {
                     value: (Math.round(upperValue * 100) / 100).toFixed(2)
                 });
                 setUpperColor(upperColor.toLowerCase());
-            } else {
+            } else if (option === 1) {
                 const lowerColor =
                     countryData[minAdjustedRateCountry]
                         .colorAdjustedAccidentRate;
@@ -360,6 +374,21 @@ export const Legend = ({ countryData, option }) => {
                     value: (Math.round(upperValue * 100) / 100).toFixed(2)
                 });
                 setUpperColor(upperColor.toLowerCase());
+            } else {
+                const lowerColor = countryData[minAdjustedRateCountry].hdiColor;
+                const upperColor = countryData[maxRateCountry].hdiColor;
+                const lowerValue = countryData[minAdjustedRateCountry].hdi;
+                const upperValue = countryData[maxAdjustedRateCountry].hdi;
+                setLowerPart({
+                    color: lowerColor,
+                    value: (Math.round(lowerValue * 100) / 100).toFixed(2)
+                });
+                setLowerColor(lowerColor.toLowerCase());
+                setUpperPart({
+                    color: upperColor,
+                    value: (Math.round(upperValue * 100) / 100).toFixed(2)
+                });
+                setUpperColor(upperColor.toLowerCase());
             }
         }
     }, [countryData, option]);
@@ -368,16 +397,24 @@ export const Legend = ({ countryData, option }) => {
         <div className="flex gap-1 py-2">
             <div
                 style={{
-                    background: `linear-gradient(to top, ${lowerColor}, ${upperColor})`,
+                    background: `linear-gradient(${
+                        option !== 2 ? "to top" : "to bottom"
+                    }, ${lowerColor}, ${upperColor})`,
                     height: "100%",
                     width: "10px",
                     borderRadius: "10px"
                 }}
             />
-            <div className="flex flex-col-reverse justify-between text-xs font-medium">
+            <div
+                className={`flex ${
+                    option === 2 ? "flex-col" : "flex-col-reverse"
+                } justify-between text-xs font-medium`}>
                 <div>{lowerPart?.value}</div>
                 <div>
-                    {(Number(lowerPart?.value) + Number(upperPart?.value)) / 2}
+                    {(
+                        (Number(lowerPart?.value) + Number(upperPart?.value)) /
+                        2
+                    ).toFixed(2)}
                 </div>
                 <div>{upperPart?.value}</div>
             </div>
