@@ -15,30 +15,31 @@ export const projectList = [
             "Electron"
         ],
         imageMain: "tib.png",
-        logo: "/projects/tib_logo.png"
+        logo: "/projects/tib_logo.png",
+        active: false
     },
-    {
-        id: 2,
-        name: "KI4ALL",
-        descriptionShort:
-            "Creating and maintaining a Website for a university project and rewriting it in React.",
-        descriptionLong: `TIB is a web application that enhances the communication between teams and their team leaders.
-            TIB is a web application that enhances the communication between teams and their team leaders.`,
-        technologies: ["Wordpress", "React", "TailwindCSS"],
-        imageMain: "./projects/ki4all.png",
-        logo: "/projects/ki4all_logo.png"
-    },
-    {
-        id: 3,
-        name: "Webpizza",
-        descriptionShort:
-            "University project: Creating a web application that allows users to order pizza.",
-        descriptionLong: `TIB is a web application that enhances the communication between teams and their team leaders.
-            TIB is a web application that enhances the communication between teams and their team leaders.`,
-        technologies: ["Python", "Django", "SQLite", "Bootstrap"],
-        imageMain: "./projects/ki4all.png",
-        logo: "/projects/webpizza_logo.png"
-    },
+    // {
+    //     id: 2,
+    //     name: "KI4ALL",
+    //     descriptionShort:
+    //         "Creating and maintaining a Website for a university project and rewriting it in React.",
+    //     descriptionLong: `TIB is a web application that enhances the communication between teams and their team leaders.
+    //         TIB is a web application that enhances the communication between teams and their team leaders.`,
+    //     technologies: ["Wordpress", "React", "TailwindCSS"],
+    //     imageMain: "./projects/ki4all.png",
+    //     logo: "/projects/ki4all_logo.png"
+    // },
+    // {
+    //     id: 3,
+    //     name: "Webpizza",
+    //     descriptionShort:
+    //         "University project: Creating a web application that allows users to order pizza.",
+    //     descriptionLong: `TIB is a web application that enhances the communication between teams and their team leaders.
+    //         TIB is a web application that enhances the communication between teams and their team leaders.`,
+    //     technologies: ["Python", "Django", "SQLite", "Bootstrap"],
+    //     imageMain: "./projects/ki4all.png",
+    //     logo: "/projects/webpizza_logo.png"
+    // },
     {
         id: 4,
         name: "Flower AI Model",
@@ -49,7 +50,8 @@ export const projectList = [
         technologies: ["Python", "JavaScript", "React"],
         imageMain: "./projects/ki4all.png",
         logo: "/projects/webpizza_logo.png",
-        link: "flower-ai"
+        link: "flower-ai",
+        active: true
     },
     ,
     {
@@ -62,7 +64,8 @@ export const projectList = [
         technologies: ["JavaScript", "SPARQL", "SHACL"],
         imageMain: "./projects/ki4all.png",
         logo: "/projects/webpizza_logo.png",
-        link: "semantic-web"
+        link: "semantic-web",
+        active: true
     },
     {
         id: 99,
@@ -77,6 +80,8 @@ export const projectList = [
             "Ubunutu Server"
         ],
         imageMain: "./projects/ki4all.png",
-        logo: "/projects/website_logo.png"
+        logo: "/projects/website_logo.png",
+        link: "https://github.com/nikitawagner/website",
+        active: true
     }
 ];

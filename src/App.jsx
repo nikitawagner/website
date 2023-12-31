@@ -9,6 +9,7 @@ import Projects from "./components/Projects";
 import Project from "./components/Project";
 import AI from "./components/projects/ai/AI";
 import SemanticWeb from "./components/projects/semantic-web/SemanticWeb";
+import PageUnderConstruction from "./components/PageUnderConstruction";
 
 function App() {
     return (
@@ -19,6 +20,7 @@ function App() {
                     <Route path="/" Component={About} />
                     <Route path="/cv" Component={CV} />
                     <Route path="/projects" Component={Projects} />
+                    <Route path="/contact" Component={PageUnderConstruction} />
                     {/* <Route path="/projects/:id" Component={Project} /> */}
                     <Route path="/projects/flower-ai" Component={AI} />
                     <Route
