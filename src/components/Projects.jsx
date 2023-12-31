@@ -27,13 +27,22 @@ const Projects = () => {
                             <p className="text-gray-600">
                                 {project.technologies.join(", ")}
                             </p>
-                            <div
-                                className="text-l mt-3 font-bold text-secondary hover:cursor-pointer"
-                                onClick={() =>
-                                    navigate(`/projects/${project.link}`)
-                                }>
-                                Learn more {">"}
-                            </div>
+                            {project.active ? (
+                                <div
+                                    className="text-l mt-3 font-bold text-secondary hover:cursor-pointer"
+                                    onClick={() => {
+                                        project.id != 99
+                                            ? navigate(
+                                                  `/projects/${project.link}`
+                                              )
+                                            : window.open(
+                                                  project.link,
+                                                  "_blank"
+                                              );
+                                    }}>
+                                    Learn more {">"}
+                                </div>
+                            ) : null}
                         </div>
                     );
                 })}

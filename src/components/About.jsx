@@ -169,12 +169,7 @@ const Timeline = () => {
                     <time className="mb-2 mb-4 block font-normal leading-none text-gray-600 ">
                         2021/09 - 2025/02
                     </time>
-                    <p className="mb-4 text-base font-normal text-gray-500 ">
-                        Web Application{" "}
-                        {/* with over <b className="text-primary">1000</b> daily users  */}
-                        that incubates the communication between teams and team
-                        leaders:
-                    </p>
+                    <p className="mb-4 text-base font-normal text-gray-500 "></p>
                     <ul className="list-inside list-disc">
                         <li>
                             Frontend Development:{" "}
@@ -208,19 +203,19 @@ const Timeline = () => {
                         2023/09 - 2024/02
                     </time>
                     <div className="text-base font-normal text-gray-500">
-                        Due to my interest in travelling, it was clear to me
-                        that I wanted to go abroad for a semester. I have not
-                        only improved my French skills but I have also grown as
-                        a person. The most interesting topics were:
                         <ul className="list-inside list-disc">
                             <li>
                                 Introduction to AI:{" "}
                                 <b className="text-primary">Python</b>
                             </li>
                             <li>
+                                Webapplication with{" "}
+                                <b className="text-primary">Django</b>
+                            </li>
+                            <li>
                                 Developement of a{" "}
                                 <b className="text-primary">Unity Game</b> in a
-                                team of 20 people:{" "}
+                                team of 20 people{" "}
                             </li>
                             <li>
                                 Semantic Web:{" "}
@@ -259,9 +254,6 @@ const Timeline = () => {
                         2021/09 - 2025/02
                     </time>
                     <div className="text-base font-normal text-gray-500">
-                        In this practical oriented university I chose the
-                        specialization in Software Engineering and these are
-                        some of the most interesting topics:
                         <ul className="list-inside list-disc">
                             <li>
                                 Software Engineering I/II:{" "}
