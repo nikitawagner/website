@@ -25,11 +25,6 @@ export const aboutImages = [
         hover: "Tokyo"
     },
     {
-        src: "./about/toulouse4.jpg",
-        alt: "Toulouse",
-        hover: "Toulouse"
-    },
-    {
         src: "./about/tokyo2.jpg",
         alt: "Tokyo",
         hover: "Tokyo"
