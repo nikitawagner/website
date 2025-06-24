@@ -17,7 +17,7 @@ const CV = () => {
                 })}
             </div>
             <p className="mt-2 text-center font-thin">
-                {"("}last updated 2023-11-23{")"}
+                {"("}last updated 2025-06-24{")"}
             </p>
         </div>
     );
@@ -39,7 +39,7 @@ const CV_Box = ({ language }) => {
                 </a>
                 <a
                     href={language.file}
-                    download={`WAGNER_Nikita_CV_${language.language}`}>
+                    download={`ONLINE_WAGNER_Nikita_CV_${language.language}`}>
                     <Button text={"download"} />
                 </a>
             </div>

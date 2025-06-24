@@ -152,6 +152,79 @@ const Timeline = () => {
     return (
         <div className="container bg-white">
             <ol className="relative m-3 border-s border-gray-200 pr-2">
+            <li className="mb-10 ms-6">
+                    <span className="absolute -start-3 flex h-6 w-6 items-center justify-center rounded-full bg-white ring-8 ring-white">
+                        <img
+                            src="./about/dreifach.jpg"
+                            className="h-3.5 w-3.5"
+                        />
+                    </span>
+                    <h3 className="mb-1 text-lg font-semibold text-gray-900">
+                        Working Student at{" "}
+                        <span className="text-primary">
+                            &nbsp;dreifach.ai&nbsp;
+                        </span>{" "}
+                        (Remote)
+                        <span className="me-2 ms-3 rounded bg-primary px-2.5 py-0.5 text-sm font-medium text-white ">
+                            Latest
+                        </span>
+                    </h3>
+                    <time className="mb-2 block font-normal leading-none text-gray-600">
+                        2025/04 - 
+                    </time>
+                    <div className="text-base font-normal text-gray-500">
+                        <ul className="list-inside list-disc">
+                            <li>
+                                Full Stack Software Engineering:{" "}
+                                <b className="text-primary">
+                                    TypeScript, EffectJS, NextJS, Prisma, Git
+                                </b>
+                            </li>
+                            <li>
+                                Process Automation:{" "}
+                                <b className="text-primary">
+                                    Copilot Studio with Microsoft Power Platform
+                                </b>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            <li className="mb-10 ms-6">
+                    <span className="absolute -start-3 flex h-6 w-6 items-center justify-center rounded-full bg-white ring-8 ring-white">
+                        <img
+                            src="./about/luh.png"
+                            className="h-3.5 w-3.5"
+                        />
+                    </span>
+                    <h3 className="mb-1 text-lg font-semibold text-gray-900">
+                        Msc Computer Science at{" "}
+                        <span className="text-primary">
+                            &nbsp;Leibniz Universität Hannover&nbsp;
+                        </span>{" "}
+                        (Hannover)
+                    </h3>
+                    <time className="mb-2 block font-normal leading-none text-gray-600">
+                        2025/04 - 2027/03
+                    </time>
+                    <div className="text-base font-normal text-gray-500">
+                        <ul className="list-inside list-disc">
+                            <li>
+                                Artificial Intelligence:{" "}
+                                <b className="text-primary">
+                                    Automated Machine Learning
+                                </b>
+                            </li>
+                            <li>
+                                Software Engineering:{" "}
+                                <b className="text-primary">
+                                    Software Quality
+                                </b>
+                                and {" "}
+                                <b className="text-primary">Requirements Engineering</b>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
                 <li className="mb-10 ms-6">
                     <span className="absolute -start-3 flex h-6 w-6 items-center justify-center rounded-full bg-white ring-8 ring-white ">
                         <img src="./about/vw.png" className="h-6 w-6" />
@@ -162,12 +235,9 @@ const Timeline = () => {
                             &nbsp;VOLKSWAGEN&nbsp;
                         </span>{" "}
                         (Hannover)
-                        <span className="me-2 ms-3 rounded bg-primary px-2.5 py-0.5 text-sm font-medium text-white ">
-                            Latest
-                        </span>
                     </h3>
                     <time className="mb-2 mb-4 block font-normal leading-none text-gray-600 ">
-                        2021/09 - 2025/02
+                        2021/09 - 2025/04
                     </time>
                     <p className="mb-4 text-base font-normal text-gray-500 "></p>
                     <ul className="list-inside list-disc">

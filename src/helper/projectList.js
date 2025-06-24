@@ -18,6 +18,22 @@ export const projectList = [
         logo: "/projects/tib_logo.png",
         active: false
     },
+    {
+        id: 2,
+        name: "Bachelor Thesis",
+        descriptionShort:
+            "Experimental Comparison of Sentiment Analysis and Technical Analysis by ChatGPT for Stock Price Prediction.",
+        descriptionLong: `TIB is a web application that enhances the communication between teams and their team leaders.
+            TIB is a web application that enhances the communication between teams and their team leaders.`,
+        technologies: [
+            "Node.js",
+            "Express",
+            "OpenAI API",
+            "Postgres",
+        ],
+        link: "https://github.com/nikitawagner/bachelor-thesis",
+        active: true
+    },
     // {
     //     id: 2,
     //     name: "KI4ALL",
@@ -40,33 +56,33 @@ export const projectList = [
     //     imageMain: "./projects/ki4all.png",
     //     logo: "/projects/webpizza_logo.png"
     // },
-    {
-        id: 4,
-        name: "Flower AI Model",
-        descriptionShort:
-            "Page where you can upload an image and the Models tells you what type of flower it is.",
-        descriptionLong: `TIB is a web application that enhances the communication between teams and their team leaders.
-            TIB is a web application that enhances the communication between teams and their team leaders.`,
-        technologies: ["Python", "JavaScript", "React"],
-        imageMain: "./projects/ki4all.png",
-        logo: "/projects/webpizza_logo.png",
-        link: "flower-ai",
-        active: true
-    },
-    ,
-    {
-        id: 5,
-        name: "Semantic Web",
-        descriptionShort:
-            "Visualization of a SPARQL query result which connects to Wikidata and a custom database.",
-        descriptionLong: `TIB is a web application that enhances the communication between teams and their team leaders.
-            TIB is a web application that enhances the communication between teams and their team leaders.`,
-        technologies: ["JavaScript", "SPARQL", "SHACL"],
-        imageMain: "./projects/ki4all.png",
-        logo: "/projects/webpizza_logo.png",
-        link: "semantic-web",
-        active: true
-    },
+    // {
+    //     id: 4,
+    //     name: "Flower AI Model",
+    //     descriptionShort:
+    //         "Page where you can upload an image and the Models tells you what type of flower it is.",
+    //     descriptionLong: `TIB is a web application that enhances the communication between teams and their team leaders.
+    //         TIB is a web application that enhances the communication between teams and their team leaders.`,
+    //     technologies: ["Python", "JavaScript", "React"],
+    //     imageMain: "./projects/ki4all.png",
+    //     logo: "/projects/webpizza_logo.png",
+    //     link: "flower-ai",
+    //     active: true
+    // },
+    // ,
+    // {
+    //     id: 5,
+    //     name: "Semantic Web",
+    //     descriptionShort:
+    //         "Visualization of a SPARQL query result which connects to Wikidata and a custom database.",
+    //     descriptionLong: `TIB is a web application that enhances the communication between teams and their team leaders.
+    //         TIB is a web application that enhances the communication between teams and their team leaders.`,
+    //     technologies: ["JavaScript", "SPARQL", "SHACL"],
+    //     imageMain: "./projects/ki4all.png",
+    //     logo: "/projects/webpizza_logo.png",
+    //     link: "semantic-web",
+    //     active: true
+    // },
     {
         id: 99,
         name: "nikitawager.de",
@@ -74,10 +90,10 @@ export const projectList = [
         descriptionLong: `TIB is a web application that enhances the communication between teams and their team leaders.
             TIB is a web application that enhances the communication between teams and their team leaders.`,
         technologies: [
-            "React",
+            "ReactJS",
             "TailwindCSS",
             "Github Actions",
-            "Ubunutu Server"
+            "Debian Server"
         ],
         imageMain: "./projects/ki4all.png",
         logo: "/projects/website_logo.png",

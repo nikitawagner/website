@@ -30,15 +30,10 @@ const Projects = () => {
                             {project.active ? (
                                 <div
                                     className="text-l mt-3 font-bold text-secondary hover:cursor-pointer"
-                                    onClick={() => {
-                                        project.id != 99
-                                            ? navigate(
-                                                  `/projects/${project.link}`
-                                              )
-                                            : window.open(
-                                                  project.link,
-                                                  "_blank"
-                                              );
+                                    onClick={() => {window.open(
+                                        project.link,
+                                        "_blank"
+                                    )
                                     }}>
                                     Learn more {">"}
                                 </div>
